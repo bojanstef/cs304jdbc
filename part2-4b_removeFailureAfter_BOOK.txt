@@ -1,0 +1,20 @@
+a00002    Secrets of Silicon Valley                              
+New Age Books                                          n         
+a00005    Introduciton to Artificial Intelligence                
+Pearson                                                y         
+a00007    Art of Programming                                     
+McGraw Hill                                            y         
+a00012    Digital Image Processing                               
+Pearson                                                y         
+a00009    The Martian                                            
+New Age Books                                          y         
+a00014    Electromagnetism                                       
+McGraw Hill                                            y         
+a00013    Prolonged Data Deprivation: Four Case Studies          
+McGraw Hill                                            y         
+a00015    History of Civilization                                
+Pearson                                                y         
+a00016    Microcontroller Programming                            
+McGraw Hill                                            y         
+a00017    Introduction to Computational Neuroscience             
+Pearson                                                y         

@@ -1,0 +1,4 @@
+drop table itemPurchase; 
+drop table purchase; 
+drop table book; 
+drop table item;
