@@ -34,10 +34,15 @@ public class Main {
 		readTextFilesToArrays();		
 		connectToDatabase();				
 		
+		/** 
+		 * 
+		 * TODO: COMMENT dropTables() OUT IF IT'S THROWING AN EXCEPTION. 
+		 *  
+		 **/
 		dropTables(stmt); // Throws exception if there are no tables to drop.		
 		
 		// Part 1 - Create tables and Populate them.			
-		createTables(stmt); // Throws exception if the tables are already created.
+		createTables(stmt); 
 		populateTables(stmt); 		
 		
 		// Part 2 - Insert and remove prompt. 
@@ -156,11 +161,30 @@ public class Main {
 	}
 	
 	private static void executePartThree(Statement s) {
-		// TODO: - implement.
+		try {
+			String part3queryString = readFile("part3query.txt", Charset.defaultCharset());
+			String part3Query = part3queryString.replaceAll("\n", " ");			
+			ResultSet books = s.executeQuery(part3Query);
+		    while (books.next()) {		    	
+				System.out.println(books.getString(1));	
+			}
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private static void executePartFour(Statement s) {
-		// TODO: - implement.
+		try {
+			String part4queryString = readFile("part4query.txt", Charset.defaultCharset());
+			String part4Query = part4queryString.replaceAll("\n", " ");			
+			ResultSet items = s.executeQuery(part4Query);			
+		    for(int i = 1; i <= 3; i++) {
+		    	items.next();
+				System.out.println("Top " + i + ": Item - " + items.getString(1) + " sold " + items.getString(2) + " units this week.");	
+			}
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private static void executeExampleOneSuccess(Statement s) {	

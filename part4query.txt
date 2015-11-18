@@ -1,0 +1,7 @@
+SELECT ip.upc, SUM(quantity) AS quantity_sum
+FROM itemPurchase ip, purchase p
+WHERE ip.t_id = p.t_id
+AND p.purchaseDate >= '15-OCT-25'
+AND p.purchaseDate <= '15-OCT-31'
+GROUP BY ip.upc
+ORDER BY quantity_sum DESC
